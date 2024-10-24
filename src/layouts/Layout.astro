@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import Navbar from "../components/Navbar.astro";
 ---
 
 <!doctype html>
@@ -13,10 +14,14 @@ const { title } = Astro.props;
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+    </style>
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
+    <Navbar />
     <slot />
   </body>
 </html>
@@ -26,10 +31,25 @@ const { title } = Astro.props;
     --secundary-color: #80af81;
     --terciary-color: #508d4e;
     --quaternary-color: #1a5319;
+    --white-color: #f1fff3;
     /*----------------------------------typografia*/
+    --typography-normal: 2rem;
+    --typography-medium: 3rem;
+    --typography-big: 4rem;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
   html {
+    font-size: 62.5%;
     background: var(--primary-color);
+    font-family: "EB Garamond", serif;
+    /*font-optical-sizing: auto;*/
+    /*font-weight: <weight>;*/
+    /*font-style: normal;*/
   }
   /*code {*/
   /*  font-family:*/

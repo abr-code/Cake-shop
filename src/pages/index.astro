@@ -1,12 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import LandingSection from "../components/landingSection.astro";
 ---
 
 <Layout title="Cake shop">
   <main>
-    <h1>Cake shop</h1>
+    <LandingSection />
   </main>
 </Layout>
-
-<style></style>
+<style>
+  h1 {
+    font-size: var(--typografy-medium);
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+import HomeIcon from "./icons/HomeIcon.astro";
+import InfoIcon from "./icons/InfoIcon.astro";
+import CakeIcon from "./icons/CakeIcon.astro";
+import MailIcon from "./icons/MailIcon.astro";
+---
+
+<nav>
+  <ul>
+    <li><a href="#Home"><span>Home </span><HomeIcon /></a></li>
+    <li><a href="#info"><span>info </span><InfoIcon /></a></li>
+    <li><a href="#cakes"><span>Cakes </span><CakeIcon /></a></li>
+    <li><a href="#contact"><span>Contact </span><MailIcon /></a></li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    width: 100vw;
+  }
+  nav ul {
+    padding: 12px 0;
+    display: flex;
+    list-style: none;
+    font-size: var(--typography-normal);
+    background: var(--secundary-color);
+  }
+
+  nav ul a {
+    display: flex;
+    align-items: center;
+    /*justify-items: center;*/
+    color: var(--quaternary-color);
+    font-weight: 600;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 8px;
+  }
+  nav ul a:hover {
+    background: #dbdbd4;
+  }
+
+  nav ul a span {
+    padding-right: 4px;
+  }
+
+  @media (width<=385px) {
+    nav ul {
+      font-size: 1.3rem;
+      justify-content: center;
+    }
+  }
+</style>
