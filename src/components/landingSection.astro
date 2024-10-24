@@ -1,0 +1,87 @@
+---
+import Slider from "./Slider.astro";
+import Button from "./Button.astro";
+---
+
+<section id="landing">
+  <div class="title">
+    <h1>Cake Shop</h1>
+    <p>Dulces deliciosos para todos los gustos</p>
+    <div class="buttonArea">
+      <Button />
+      <Button type="secundary" />
+    </div>
+  </div>
+  <div class="landing-img">
+    <Slider />
+    <!--<BgCakeIcon />-->
+    <!--src="../../public/assets/Dulce-bayas.jpg"-->
+    <!--src="/public/assets/Dulce-bayas.jpg"-->
+    <!--<img src={DulceBayas.src} alt="Dulce de bayas" />-->
+    <!--<Image src={DulceBayas} alt="Dulce de bayas" />-->
+    <!--<Image src={DulceBayas} alt="Dulce de bayas" />-->
+    <!--<Image src={DulceBayas} alt="Dulce de bayas" />-->
+  </div>
+</section>
+
+<style>
+  #landing {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 0 40px;
+    /*justify-content: space-around;*/
+    height: 100vh;
+  }
+  .title {
+    flex: 0 0 50%;
+  }
+  .title h1 {
+    color: var(--quaternary-color);
+    font-size: 7rem;
+    margin-bottom: 0.5rem;
+  }
+  .title p {
+    font-size: var(--typography-medium);
+    color: var(--quaternary-color);
+    font-weight: 400;
+    font-style: italic;
+    text-wrap: pretty;
+  }
+
+  .buttonArea {
+    display: flex;
+    justify-content: start;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  /*mobile breakpoints*/
+
+  @media (width <=932px) {
+    #landing {
+      padding: 20px;
+    }
+  }
+
+  @media (width <=932px) {
+    #landing {
+      flex-direction: column;
+    }
+    .title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /*margin-top: auto;*/
+      padding-top: 9rem;
+    }
+    .title h1 {
+      font-size: 6rem;
+    }
+  }
+  @media (width <= 340px) {
+    .buttonArea {
+      flex-direction: column;
+    }
+  }
+</style>

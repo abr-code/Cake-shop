@@ -1,0 +1,115 @@
+---
+import imgCremaFresa from "@assets/dulce-crema-fresas.jpg";
+import imgFresa from "@assets/dulce-freza.jpg";
+import dulceCanela from "@assets/dulce-canela.jpg";
+import imgPina from "@assets/dulce-piña.jpg";
+import { Image } from "astro:assets";
+---
+
+<div id="app"></div>
+
+<div class="sliderContainer">
+  <div class="slider">
+    <Image src={imgCremaFresa} alt="" id="image1" />
+    <Image src={imgFresa} alt="" id="image2" />
+    <Image src={imgPina} alt="" id="image3" />
+    <Image src={dulceCanela} alt="" id="image4" />
+  </div>
+  <div class="dots">
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href="#"></a>
+  </div>
+</div>
+
+<script>
+  const slides: HTMLElement =
+    (document.querySelector(".slider") as HTMLElement) || HTMLElement;
+  const dots = document.querySelector(".dots");
+  // null checking
+  //if (!slides || !dots) return;
+  const dotsArray: HTMLElement[] = Array.from(
+    dots?.children || [],
+  ) as HTMLElement[];
+  // since every children have the same size
+  const scrollNumber = (slides.children[0] as HTMLImageElement).offsetWidth;
+  let index = 0;
+
+  // Automatic slider
+  function scrollToNextSlide() {
+    // null checking
+    if (!slides) return;
+    index = (index + 1) % slides.children.length; // Loop back to first slide
+
+    const lastDot = index - 1 < 0 ? dotsArray.length - 1 : index - 1;
+    dotsArray[lastDot].style.opacity = "0.55";
+    dotsArray[index].style.opacity = "1";
+    slides.scrollTo({
+      left: index * scrollNumber, // Scroll to the next slide
+      behavior: "smooth", // Smooth scrolling
+    });
+  }
+
+  // Automatically change slides every 4 seconds
+  let sliderIntervalId = setInterval(scrollToNextSlide, 2700);
+
+  // adding interactivity to the dots
+  dotsArray.forEach((dot, dotIdx) => {
+    dot.addEventListener("click", (event) => {
+      dotsArray[index].style.opacity = "0.55";
+      clearInterval(sliderIntervalId);
+      index = dotIdx - 1;
+      scrollToNextSlide();
+
+      sliderIntervalId = setInterval(scrollToNextSlide, 2700);
+    });
+  });
+</script>
+
+<style>
+  .sliderContainer {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    /*height: 200px;*/
+    aspect-ratio: 16/9;
+  }
+  .slider {
+    display: flex;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    /*transition: translateX(-100%) 2s;*/
+  }
+  .slider img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    scroll-snap-align: center;
+  }
+  .dots {
+    position: absolute;
+    bottom: 3rem;
+    /*left: 0%;*/
+    z-index: 1;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .dots a {
+    width: 0.8rem;
+    height: 0.8rem;
+    /*background: white;*/
+    opacity: 0.55;
+    background: whitesmoke;
+    border-radius: 50%;
+  }
+  .dots a:hover {
+    opacity: 1;
+  }
+</style>
