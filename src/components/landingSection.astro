@@ -27,15 +27,14 @@ import Button from "./Button.astro";
 <style>
   #landing {
     display: flex;
+    justify-content: space-evenly;
     gap: 20px;
     align-items: center;
     padding: 0 40px;
     /*justify-content: space-around;*/
     height: 100vh;
   }
-  .title {
-    flex: 0 0 50%;
-  }
+
   .title h1 {
     color: var(--quaternary-color);
     font-size: 7rem;
@@ -66,7 +65,10 @@ import Button from "./Button.astro";
   @media (width <=932px) {
     #landing {
       flex-direction: column;
+      /*flex-wrap: wrap;*/
+      overflow: hidden;
     }
+
     .title {
       display: flex;
       flex-direction: column;
