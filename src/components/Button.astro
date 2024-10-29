@@ -4,7 +4,7 @@ const { type = "primary", link } = Astro.props;
 
 <button type="button" class={type}>
   <a href={link}></a>
-  Mas informacion
+  <slot> Mas informacion </slot>
 </button>
 
 <style>
