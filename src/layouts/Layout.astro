@@ -21,9 +21,16 @@ import Navbar from "../components/Navbar.astro";
     <title>{title}</title>
   </head>
   <body>
-    <Navbar />
+    <header>
+      <Navbar />
+    </header>
     <slot />
   </body>
+  <footer>
+    <span class="footer-text">
+      Hecho por <a href="https://github.com/abr-code">abr-code</a>
+    </span>
+  </footer>
 </html>
 <style is:global>
   :root {
@@ -53,7 +60,19 @@ import Navbar from "../components/Navbar.astro";
     /*font-style: normal;*/
   }
   section {
-    padding: 0 40px;
+    padding: 2rem 4rem;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+    background: var(--quaternary-color);
+  }
+  footer .footer-text,
+  .footer-text > a {
+    font-size: var(--typography-normal);
+    color: var(--primary-color);
   }
   /*code {*/
   /*  font-family:*/
@@ -67,3 +86,5 @@ import Navbar from "../components/Navbar.astro";
   /*    monospace;*/
   /*}*/
 </style>
+
+<style></style>
