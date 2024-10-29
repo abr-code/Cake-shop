@@ -1,0 +1,102 @@
+---
+
+---
+
+<section id="info">
+  <div class="content">
+    <h2>Acerca de Nosotros</h2>
+    <p>
+      En <strong>Cake shop</strong>, la repostería es más que un oficio; es una
+      pasión. Cada pastel que creamos es una obra de arte. Utilizamos solo
+      ingredientes frescos y de alta calidad, garantizando un sabor inigualable
+      en cada bocado.
+    </p>
+
+    <!--<h3>Nuetros Productos</h3>-->
+    <!--<p>-->
+    <!--  Ofrecemos una amplia gama de pasteles para satisfacer todos los gustos:-->
+    <!--</p>-->
+    <!--<ul>-->
+    <!--  <li>-->
+    <!--    <strong>Pastel de Chocolate Intenso</strong>: Un rico y esponjoso pastel-->
+    <!--    que hará las delicias de los amantes del chocolate.-->
+    <!--  </li>-->
+    <!--  <li>-->
+    <!--    <strong>Tarta de Frutas Frescas</strong>: Ligera y refrescante, perfecta-->
+    <!--    para cualquier celebración.-->
+    <!--  </li>-->
+    <!--  <li>-->
+    <!--    <strong>Pastel Red Velvet</strong>: Suave, elegante y con un sabor-->
+    <!--    irresistible.-->
+    <!--  </li>-->
+    <!--  <li>-->
+    <!--    <strong>Opciones Veganas y Sin Gluten</strong>: Creaciones deliciosas-->
+    <!--    para que todos puedan disfrutar.-->
+    <!--  </li>-->
+    <!--</ul>-->
+    <!--<p>-->
+    <!--  Cada producto es hecho a mano, garantizando frescura y un toque personal-->
+    <!--  en cada pastel.-->
+    <!--</p>-->
+
+    <h3>Personalización</h3>
+    <p>
+      Nos especializamos en la creación de pasteles personalizados para
+      adaptarnos a tus preferencias y ocasiones especiales.
+    </p>
+  </div>
+
+  <style>
+    section {
+      /*padding-top: 2rem;*/
+      padding-bottom: 2rem;
+    }
+    .content {
+      /*width: 80vw;*/
+      margin: auto;
+      width: 70vw;
+    }
+    h2 {
+      font-size: var(--typography-big);
+      /*font-weight: 800;*/
+      text-align: center;
+      padding-bottom: 3rem;
+    }
+    h3 {
+      font-size: var(--typography-medium);
+      padding-top: 2rem;
+      /*font-weight: 800;*/
+    }
+    ul {
+      margin-left: 5rem;
+      padding-bottom: 2rem;
+    }
+    p,
+    li {
+      font-size: var(--typography-medium);
+      font-weight: 500;
+      text-wrap: pretty;
+    }
+
+    /*breakpoints*/
+    @media (width<= 900px) {
+      .content {
+        width: 90vw;
+      }
+    }
+
+    @media (width<=480px) {
+      p,
+      li {
+        font-size: var(--typography-normal);
+        font-weight: 600;
+        text-wrap: pretty;
+      }
+    }
+    @media (width<=650px) {
+      section {
+        padding: 1rem;
+      }
+    }
+  </style>
+</section>
