@@ -2,11 +2,11 @@
 const { type = "primary", link } = Astro.props;
 ---
 
-<button type="button" class={type}>
-  <a href={link}></a>
-  <slot> Mas informacion </slot>
-</button>
-
+<a href={link}>
+  <button type="button" class={type}>
+    <slot> Mas informacion </slot>
+  </button>
+</a>
 <style>
   button {
     border-radius: 5px;
