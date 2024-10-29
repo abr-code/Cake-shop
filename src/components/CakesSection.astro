@@ -1,0 +1,69 @@
+---
+import CakeCard from "./CakeCard.astro";
+import imgCremaFresa from "@assets/dulce-crema-fresas.jpg";
+import imgFresa from "@assets/dulce-freza.jpg";
+import dulceCanela from "@assets/dulce-canela.jpg";
+import imgPina from "@assets/dulce-piña.jpg";
+---
+
+<section id="cakes">
+  <h1>Cakes</h1>
+  <div class="cakesContainer">
+    <CakeCard imgSrc={imgCremaFresa} title="Crema de fresa">
+      Delicioso dulce natural para el disfrute de todos
+    </CakeCard>
+    <CakeCard imgSrc={imgCremaFresa} title="Crema de fresa">
+      Delicioso dulce natural para el disfrute de todos
+    </CakeCard>
+    <CakeCard imgSrc={imgCremaFresa} title="Crema de fresa">
+      Delicioso dulce natural para el disfrute de todos
+    </CakeCard>
+    <CakeCard imgSrc={imgCremaFresa} title="Crema de fresa">
+      Delicioso dulce natural para el disfrute de todos
+    </CakeCard>
+  </div>
+</section>
+
+<style>
+  section {
+    padding-top: 9rem; /*Quitar*/
+  }
+  h1 {
+    margin: 36px 0px;
+    font-size: var(--typography-big);
+    text-align: center;
+  }
+  /*.cakesContainer {*/
+  /*width: 80vw;*/
+  /*  /*margin: auto;*/
+  /*  display: flex;*/
+  /*  justify-content: space-evenly;*/
+  /*  gap: 32px;*/
+  /*  flex-wrap: wrap;*/
+  /*}*/
+
+  /*.cakesContainer {*/
+  /*  width: 70vw;*/
+  /*  margin: auto;*/
+  /*  display: grid;*/
+  /*  /*grid-template-columns: repeat(3, min-content);*/
+  /*  grid-template-columns: repeat(3, 1fr);*/
+  /*  /*gap: 32px;*/
+  /*  justify-items: center;*/
+  /*  /*justify-content: center;*/
+  /*}*/
+
+  .cakesContainer {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+    gap: 44px;
+    justify-items: center;
+    justify-content: center;
+  }
+  @media (width<=920px) {
+    section {
+      padding: 0px 1rem;
+    }
+  }
+</style>

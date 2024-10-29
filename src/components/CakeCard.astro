@@ -1,0 +1,45 @@
+---
+const { imgSrc = "", title, price = 22.99 } = Astro.props;
+import { Image } from "astro:assets";
+import Button from "./Button.astro";
+---
+
+<div class="cardContainer">
+  <Image src={imgSrc} alt={title} width="200" height="200" />
+  <h3>{title}</h3>
+  <p><slot /></p>
+  <p class="price">{price}</p>
+  <Button type="primary"> Comprar </Button>
+
+  <style>
+    .cardContainer {
+      padding: 16px 8px;
+      width: 300px;
+      text-align: center;
+      text-wrap: pretty;
+      border: 2px solid var(--quaternary-color);
+      border-radius: 24px;
+    }
+    .cardContainer:hover {
+      scale: 1.05;
+    }
+    img {
+      border-radius: 50%;
+    }
+    h3 {
+      margin-bottom: 8px;
+      font-size: var(--typography-medium);
+      font-style: italic;
+    }
+    p {
+      font-size: var(--typography-normal);
+      font-weight: 500;
+    }
+    .price {
+      margin: 8px 0px;
+      font-size: var(--typography-medium);
+      font-style: italic;
+      font-weight: 600;
+    }
+  </style>
+</div>
