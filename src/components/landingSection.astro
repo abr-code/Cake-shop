@@ -3,35 +3,26 @@ import Slider from "./Slider.astro";
 import Button from "./Button.astro";
 ---
 
-<section id="landing">
+<section id="home">
   <div class="title">
     <h1>Cake Shop</h1>
     <p>Dulces deliciosos para todos los gustos</p>
     <div class="buttonArea">
-      <Button />
-      <Button type="secundary" />
+      <Button link="#cakes">Comprar</Button>
+      <Button link="#info" type="secundary" />
     </div>
   </div>
   <div class="landing-img">
     <Slider />
-    <!--<BgCakeIcon />-->
-    <!--src="../../public/assets/Dulce-bayas.jpg"-->
-    <!--src="/public/assets/Dulce-bayas.jpg"-->
-    <!--<img src={DulceBayas.src} alt="Dulce de bayas" />-->
-    <!--<Image src={DulceBayas} alt="Dulce de bayas" />-->
-    <!--<Image src={DulceBayas} alt="Dulce de bayas" />-->
-    <!--<Image src={DulceBayas} alt="Dulce de bayas" />-->
   </div>
 </section>
 
 <style>
-  #landing {
+  section {
     display: flex;
     justify-content: space-evenly;
     gap: 20px;
     align-items: center;
-    padding: 0 40px;
-    /*justify-content: space-around;*/
     height: 100vh;
   }
 
@@ -57,13 +48,13 @@ import Button from "./Button.astro";
   /*mobile breakpoints*/
 
   @media (width <=932px) {
-    #landing {
+    section {
       padding: 20px;
     }
   }
 
   @media (width <=932px) {
-    #landing {
+    section {
       flex-direction: column;
       /*flex-wrap: wrap;*/
       overflow: hidden;
