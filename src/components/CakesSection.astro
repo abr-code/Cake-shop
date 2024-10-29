@@ -1,7 +1,7 @@
 ---
 import CakeCard from "./CakeCard.astro";
 import imgCremaFresa from "@assets/dulce-crema-fresas.jpg";
-import imgFresa from "@assets/dulce-freza.jpg";
+import imgFresa from "@assets/dulce-fresa.jpg";
 import dulceCanela from "@assets/dulce-canela.jpg";
 import imgPina from "@assets/dulce-piña.jpg";
 ---
@@ -10,16 +10,16 @@ import imgPina from "@assets/dulce-piña.jpg";
   <h1>Cakes</h1>
   <div class="cakesContainer">
     <CakeCard imgSrc={imgCremaFresa} title="Crema de fresa">
-      Delicioso dulce natural para el disfrute de todos
+      Un postre suave y cremoso que encanta a todos.
     </CakeCard>
-    <CakeCard imgSrc={imgCremaFresa} title="Crema de fresa">
-      Delicioso dulce natural para el disfrute de todos
+    <CakeCard imgSrc={imgFresa} title="Dulce de fresa" price="24.99">
+      Sabor fresco y dulce que evoca los días de verano.
     </CakeCard>
-    <CakeCard imgSrc={imgCremaFresa} title="Crema de fresa">
-      Delicioso dulce natural para el disfrute de todos
+    <CakeCard imgSrc={dulceCanela} title="Dulce de Canela" price="15.99">
+      Un toque cálido y especiado para deleitar el paladar.
     </CakeCard>
-    <CakeCard imgSrc={imgCremaFresa} title="Crema de fresa">
-      Delicioso dulce natural para el disfrute de todos
+    <CakeCard imgSrc={imgPina} title="Dulce de piña" price="14.99">
+      Un manjar tropical que transporta a la playa.
     </CakeCard>
   </div>
 </section>
@@ -29,7 +29,7 @@ import imgPina from "@assets/dulce-piña.jpg";
     padding-top: 9rem; /*Quitar*/
   }
   h1 {
-    margin: 36px 0px;
+    margin-bottom: 36px;
     font-size: var(--typography-big);
     text-align: center;
   }
@@ -63,7 +63,8 @@ import imgPina from "@assets/dulce-piña.jpg";
   }
   @media (width<=920px) {
     section {
-      padding: 0px 1rem;
+      padding: 2rem 1rem;
+      padding-top: 9rem;
     }
   }
 </style>
