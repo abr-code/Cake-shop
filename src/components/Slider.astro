@@ -26,22 +26,53 @@ import { Image } from "astro:assets";
 <script>
   const slides: HTMLElement =
     (document.querySelector(".slider") as HTMLElement) || HTMLElement;
+
+  const slide1 = slides.children[0] as HTMLImageElement;
   const dots = document.querySelector(".dots");
-  // null checking
-  //if (!slides || !dots) return;
   const dotsArray: HTMLElement[] = Array.from(
     dots?.children || [],
   ) as HTMLElement[];
-  // since every children have the same size
-  const scrollNumber = (slides.children[0] as HTMLImageElement).offsetWidth;
+
   let index = 0;
+  let scrollNumber: number = 0;
+
+  // since every children have the same size
+  // wait until the image1 fully load to take its width and set intervals
+  slide1.addEventListener("load", () => {
+    scrollNumber = (slides.children[0] as HTMLImageElement).offsetWidth;
+
+    // Automatically change slides every 4 seconds
+    let sliderIntervalId = setInterval(scrollToNextSlide, 2700);
+
+    // adding interactivity to the dots
+    dotsArray.forEach((dot, dotIdx) => {
+      dot.addEventListener("click", (event) => {
+        dotsArray[index].style.opacity = "0.55";
+        clearInterval(sliderIntervalId);
+        index = dotIdx - 1;
+        scrollToNextSlide();
+
+        sliderIntervalId = setInterval(scrollToNextSlide, 2700);
+      });
+    });
+  });
+  // if the image is already cached
+  if (slide1.complete) {
+    slide1.dispatchEvent(new Event("load"));
+  }
 
   // Automatic slider
   function scrollToNextSlide() {
+    //const slides: HTMLElement =
+    //  (document.querySelector(".slider") as HTMLElement) || HTMLElement;
+    //const scrollNumber = (
+    //  document.querySelector(".sliderContainer") as HTMLElement
+    //).offsetWidth;
     // null checking
     if (!slides) return;
     index = (index + 1) % slides.children.length; // Loop back to first slide
 
+    //const scrollNumber = (slides.children[0] as HTMLImageElement).offsetWidth;
     const lastDot = index - 1 < 0 ? dotsArray.length - 1 : index - 1;
     dotsArray[lastDot].style.opacity = "0.55";
     dotsArray[index].style.opacity = "1";
@@ -50,21 +81,6 @@ import { Image } from "astro:assets";
       behavior: "smooth", // Smooth scrolling
     });
   }
-
-  // Automatically change slides every 4 seconds
-  let sliderIntervalId = setInterval(scrollToNextSlide, 2700);
-
-  // adding interactivity to the dots
-  dotsArray.forEach((dot, dotIdx) => {
-    dot.addEventListener("click", (event) => {
-      dotsArray[index].style.opacity = "0.55";
-      clearInterval(sliderIntervalId);
-      index = dotIdx - 1;
-      scrollToNextSlide();
-
-      sliderIntervalId = setInterval(scrollToNextSlide, 2700);
-    });
-  });
 </script>
 
 <style>
