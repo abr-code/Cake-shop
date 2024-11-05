@@ -10,8 +10,13 @@ import { Image } from "astro:assets";
 
 <div class="sliderContainer">
   <div class="slider">
-    <Image src={imgCremaFresa} alt="dulce de crema de fresa" id="image1" />
-    <Image src={imgFresa} alt="dulce de fresa" id="image2" />
+    <Image
+      loading="eager"
+      src={imgCremaFresa}
+      alt="dulce de crema de fresa"
+      id="image1"
+    />
+    <Image loading="eager" src={imgFresa} alt="dulce de fresa" id="image2" />
     <Image src={imgPina} alt="dulce de piña" id="image3" />
     <Image src={dulceCanela} alt="dulce de canela" id="image4" />
   </div>
