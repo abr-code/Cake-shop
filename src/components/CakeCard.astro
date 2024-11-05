@@ -5,7 +5,7 @@ import Button from "./Button.astro";
 ---
 
 <div class="cardContainer">
-  <Image src={imgSrc} alt={title} width="200" height="200" />
+  <Image src={imgSrc} alt={title} width="200" />
   <h3>{title}</h3>
   <p><slot /></p>
   <p class="price">{price}</p>
@@ -13,6 +13,10 @@ import Button from "./Button.astro";
 
   <style>
     .cardContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
       padding: 16px 8px;
       width: 300px;
       text-align: center;
