@@ -10,16 +10,16 @@ import { Image } from "astro:assets";
 
 <div class="sliderContainer">
   <div class="slider">
-    <Image src={imgCremaFresa} alt="" id="image1" />
-    <Image src={imgFresa} alt="" id="image2" />
-    <Image src={imgPina} alt="" id="image3" />
-    <Image src={dulceCanela} alt="" id="image4" />
+    <Image src={imgCremaFresa} alt="dulce de crema de fresa" id="image1" />
+    <Image src={imgFresa} alt="dulce de fresa" id="image2" />
+    <Image src={imgPina} alt="dulce de piña" id="image3" />
+    <Image src={dulceCanela} alt="dulce de canela" id="image4" />
   </div>
   <div class="dots">
-    <a href="#"></a>
-    <a href="#"></a>
-    <a href="#"></a>
-    <a href="#"></a>
+    <a href="" aria-label="link dulce crema fresa"></a>
+    <a href="" aria-label="link dulce fresa"></a>
+    <a href="" aria-label="link dulce de piña"></a>
+    <a href="" aria-label="link dulde de canela"></a>
   </div>
 </div>
 
@@ -112,14 +112,15 @@ import { Image } from "astro:assets";
     /*left: 0%;*/
     z-index: 1;
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
     justify-content: center;
     width: 100%;
   }
 
   .dots a {
-    width: 0.8rem;
-    height: 0.8rem;
+    role: button;
+    width: 1.5rem;
+    height: 1.5em;
     /*background: white;*/
     opacity: 0.55;
     background: whitesmoke;
