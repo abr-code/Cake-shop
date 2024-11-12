@@ -5,7 +5,7 @@ import Button from "./Button.astro";
 
 <section id="home">
   <div class="title">
-    <h1>Cake Shop</h1>
+    <h1 class="shop_title">Cake Shop</h1>
     <p>Dulces deliciosos para todos los gustos</p>
     <div class="buttonArea">
       <Button link="#cakes">Comprar</Button>
@@ -28,8 +28,7 @@ import Button from "./Button.astro";
 
   .title h1 {
     color: var(--quaternary-color);
-    font-size: 7rem;
-    margin-bottom: 0.5rem;
+    font-size: 11rem;
   }
   .title p {
     font-size: var(--typography-medium);
@@ -47,6 +46,11 @@ import Button from "./Button.astro";
   }
   /*mobile breakpoints*/
 
+  @media (width <= 1220px) {
+    .title h1 {
+      font-size: 8rem;
+    }
+  }
   @media (width <=932px) {
     section {
       padding: 20px;
@@ -69,7 +73,15 @@ import Button from "./Button.astro";
       padding-top: 9rem;
     }
     .title h1 {
-      font-size: 6rem;
+      font-size: 8rem;
+    }
+  }
+  @media (width <= 440px) {
+    .title h1 {
+      font-size: 5.6rem;
+    }
+    .title p {
+      font-size: 2rem;
     }
   }
   @media (width <= 340px) {
