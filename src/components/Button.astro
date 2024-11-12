@@ -9,9 +9,13 @@ const { type = "primary", link } = Astro.props;
 </a>
 <style>
   button {
+    font-size: var(--typography-normal);
+    font-family: "Lexend", sans-serif;
     border-radius: 5px;
-    height: 4rem;
+    height: auto;
+    min-height: 4rem;
     width: 15rem;
+    padding: 0.4rem;
   }
   .primary {
     background: var(--quaternary-color);
@@ -22,6 +26,7 @@ const { type = "primary", link } = Astro.props;
     background: var(--primary-color);
     border: 2px solid var(--quaternary-color);
     color: var(--quaternary-color);
+    font-size: 1.6rem;
     font-weight: 500;
   }
 </style>
