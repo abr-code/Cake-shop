@@ -13,10 +13,28 @@ import Navbar from "../components/Navbar.astro";
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
-    </style>
+    <!--<link rel="icon" type="image/svg+xml" href="/favicon.svg" />-->
+    <link
+      rel="preload"
+      href="/fonts/Gabriela-Regular-kern-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Lexend-ExtraBold-kern-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Lexend-Medium-kern-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -51,13 +69,47 @@ import Navbar from "../components/Navbar.astro";
     padding: 0;
     color: var(--quaternary-color);
   }
+
+  @font-face {
+    font-family: "Gabriela";
+    src:
+      url(/fonts/Gabriela-Regular-kern-latin.woff2) format("woff2"),
+      url(/fonts/Gabriela-Regular-kern-latin.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Lexend";
+    src:
+      url(/fonts/Lexend-ExtraBold-kern-latin.woff2) format("woff2"),
+      url(/fonts/Lexend-ExtraBold-kern-latin.woff) format("woff");
+    font-weight: 800;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Lexend";
+    src:
+      url(/fonts/Lexend-Medium-kern-latin.woff2) format("woff2"),
+      url(/fonts/Lexend-Medium-kern-latin.woff) format("woff");
+    font-weight: 500;
+    font-style: medium;
+    font-display: swap;
+  }
+
   html {
     font-size: 62.5%;
     background: var(--primary-color);
-    font-family: "EB Garamond", serif;
-    /*font-optical-sizing: auto;*/
-    /*font-weight: <weight>;*/
-    /*font-style: normal;*/
+    font-family: "Lexend";
+    font-weight: 500;
+  }
+  h1 {
+    font-family: "Gabriela", serif;
+  }
+  h2,
+  h3 {
+    font-family: "Lexend", sans-serif;
+    font-weight: 800;
   }
   section {
     padding: 2rem 4rem;
